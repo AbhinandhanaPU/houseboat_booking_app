@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/utils/theme.dart';
 import 'package:houseboat_booking/views/splash_screen.dart';
 
 void main() {
@@ -12,6 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Houseboat Booking App',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
+      darkTheme: AppTheme.darkTheme,
       home: SplashScreen(),
     );
   }
