@@ -1,3 +1,4 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
@@ -41,5 +42,47 @@ class PickerUtils {
     final ImagePicker picker = ImagePicker();
     XFile? image = await picker.pickImage(source: source);
     return image;
+  }
+
+  /// Opens an image picker and returns a list of selected image file paths
+  static Future<List<XFile>?> pickMultipleImages() async {
+    final ImagePicker picker = ImagePicker();
+    List<XFile>? images = await picker.pickMultiImage();
+    return images;
+  }
+
+  /// Pick a single video
+  static Future<XFile?> pickVideo(ImageSource source) async {
+    final ImagePicker picker = ImagePicker();
+    return await picker.pickVideo(source: source);
+  }
+
+  /// Pick multiple videos
+  static Future<List<XFile>?> pickMultipleVideos() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.video,
+      allowMultiple: true,
+    );
+
+    if (result != null) {
+      return result.files.map((file) => XFile(file.path!)).toList();
+    }
+    return null;
+  }
+
+  /// Opens a file picker and returns the selected file path
+  static Future<String?> pickFile() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles();
+
+    if (result != null && result.files.single.path != null) {
+      return result.files.single.path!;
+    }
+    return null;
+  }
+
+  /// Pick a directory (Folder Picker)
+  static Future<String?> pickDirectory() async {
+    String? selectedDirectory = await FilePicker.platform.getDirectoryPath();
+    return selectedDirectory;
   }
 }
