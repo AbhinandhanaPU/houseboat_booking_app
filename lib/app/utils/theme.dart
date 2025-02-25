@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/utils/colors.dart';
+import 'package:houseboat_booking/app/utils/colors.dart';
 
 class AppTheme {
   static ThemeData darkTheme = ThemeData(

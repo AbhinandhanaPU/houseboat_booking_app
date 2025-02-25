@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/utils/theme.dart';
-import 'package:houseboat_booking/views/splash_screen.dart';
+import 'package:houseboat_booking/app/utils/theme.dart';
+import 'package:houseboat_booking/app/views/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
