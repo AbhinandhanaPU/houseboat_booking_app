@@ -5,17 +5,19 @@ import 'package:houseboat_booking/app/widgets/lottie_animation_widget.dart';
 class WelcomeWidget extends StatelessWidget {
   final String mainText;
   final String? subText;
+  final double height;
 
   const WelcomeWidget({
     super.key,
     required this.mainText,
     this.subText,
+    required this.height,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 165,
+      height: height,
       width: double.infinity,
       color: AppColors.lightPrimary,
       padding: EdgeInsets.only(left: 20, top: 20),

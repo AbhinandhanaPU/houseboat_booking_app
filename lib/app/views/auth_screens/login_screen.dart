@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/views/auth_screens/signup_screen.dart';
 import 'package:houseboat_booking/app/views/auth_screens/welcome_widget.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
 import 'package:houseboat_booking/app/widgets/phone_no_field.dart';
@@ -17,6 +19,7 @@ class LoginScreen extends StatelessWidget {
           children: [
             // welcome text with lottie animation
             WelcomeWidget(
+              height: 163,
               mainText: 'Welcome\nBack!',
               subText: 'Login into your acoount',
             ),
@@ -77,11 +80,11 @@ class LoginScreen extends StatelessWidget {
                         controller: TextEditingController(),
                       ),
                       CustomcoloredButton(
-                        text: 'Submit',
+                        text: 'Get OTP',
                         height: 60,
                         width: double.infinity,
                       ),
-                      const Text.rich(
+                      Text.rich(
                         textAlign: TextAlign.center,
                         TextSpan(
                           children: [
@@ -99,6 +102,14 @@ class LoginScreen extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.lightPrimary,
                               ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SignUpScreen()),
+                                  );
+                                },
                             ),
                           ],
                         ),

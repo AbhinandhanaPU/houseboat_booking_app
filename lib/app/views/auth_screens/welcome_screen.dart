@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
 import 'package:houseboat_booking/app/views/auth_screens/login_screen.dart';
+import 'package:houseboat_booking/app/views/auth_screens/signup_screen.dart';
 import 'package:houseboat_booking/app/widgets/lottie_animation_widget.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -83,25 +84,34 @@ class WelcomeScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              gradient: LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [
-                                  AppColors.darkPrimary,
-                                  AppColors.lightPrimary,
-                                ],
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SignUpScreen(),
+                                  ));
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                gradient: LinearGradient(
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                  colors: [
+                                    AppColors.darkPrimary,
+                                    AppColors.lightPrimary,
+                                  ],
+                                ),
                               ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Sign Up',
-                                style: TextStyle(
-                                  color: AppColors.whiteColor,
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.w600,
+                              child: Center(
+                                child: Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                    color: AppColors.whiteColor,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                               ),
                             ),

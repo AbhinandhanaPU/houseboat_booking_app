@@ -1,3 +1,7 @@
+import 'dart:async';
+
+import 'package:intl_phone_field/phone_number.dart';
+
 class Validations {
   /// Validates if the given string is a valid email.
   static String? validateEmail(String? value) {
@@ -25,12 +29,12 @@ class Validations {
   }
 
   /// Validates if the given string is a valid phone number.
-  static String? validatePhoneNumber(String? value) {
-    if (value == null || value.isEmpty) {
+  static FutureOr<String?> validatePhoneNumber(PhoneNumber? phone) {
+    if (phone == null || phone.number.isEmpty) {
       return 'Phone number cannot be empty';
     }
-    final RegExp phoneRegex = RegExp(r"^(?:[+0]9)?[0-9]{10,12}$");
-    if (!phoneRegex.hasMatch(value)) {
+    final RegExp phoneRegex = RegExp(r"^[0-9]{10,12}$");
+    if (!phoneRegex.hasMatch(phone.number)) {
       return 'Enter a valid phone number';
     }
     return null;
