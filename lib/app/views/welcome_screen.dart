@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/views/login_screen.dart';
 import 'package:houseboat_booking/app/widgets/lottie_animation_widget.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -108,12 +109,21 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                         Expanded(
                           child: Center(
-                            child: Text(
-                              'Sign In',
-                              style: TextStyle(
-                                color: AppColors.lightPrimary,
-                                fontSize: 22,
-                                fontWeight: FontWeight.w600,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => LoginScreen(),
+                                    ));
+                              },
+                              child: Text(
+                                'Sign In',
+                                style: TextStyle(
+                                  color: AppColors.lightPrimary,
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                             ),
                           ),
