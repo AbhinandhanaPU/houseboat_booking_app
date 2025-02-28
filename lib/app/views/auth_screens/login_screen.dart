@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/views/auth_screens/welcome_widget.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
-import 'package:houseboat_booking/app/widgets/lottie_animation_widget.dart';
 import 'package:houseboat_booking/app/widgets/phone_no_field.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -16,49 +16,9 @@ class LoginScreen extends StatelessWidget {
         body: Column(
           children: [
             // welcome text with lottie animation
-            Container(
-              height: 180,
-              width: double.infinity,
-              color: AppColors.lightPrimary,
-              padding: EdgeInsets.only(left: 20, top: 20),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    spacing: 10,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Icon(Icons.arrow_back),
-                      ),
-                      Text(
-                        'Welcome\nBack!',
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                      Text(
-                        'Login into your acoount',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Expanded(
-                    child: LottieWidget(
-                      animationPath:
-                          'assets/animations/Animation - 1740673073430.json',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ],
-              ),
+            WelcomeWidget(
+              mainText: 'Welcome\nBack!',
+              subText: 'Login into your acoount',
             ),
 
             //login - phone number field

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
-import 'package:houseboat_booking/app/views/login_screen.dart';
+import 'package:houseboat_booking/app/views/auth_screens/login_screen.dart';
 import 'package:houseboat_booking/app/widgets/lottie_animation_widget.dart';
 
 class WelcomeScreen extends StatelessWidget {
