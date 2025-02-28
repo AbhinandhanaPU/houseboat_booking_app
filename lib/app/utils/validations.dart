@@ -31,11 +31,11 @@ class Validations {
   /// Validates if the given string is a valid phone number.
   static FutureOr<String?> validatePhoneNumber(PhoneNumber? phone) {
     if (phone == null || phone.number.isEmpty) {
-      return 'Phone number cannot be empty';
+      return "Phone number cannot be empty";
     }
     final RegExp phoneRegex = RegExp(r"^[0-9]{10,12}$");
     if (!phoneRegex.hasMatch(phone.number)) {
-      return 'Enter a valid phone number';
+      return "Enter a valid phone number";
     }
     return null;
   }

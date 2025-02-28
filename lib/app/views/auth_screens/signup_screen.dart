@@ -18,6 +18,7 @@ class SignUpScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Column(
+          spacing: 30,
           children: [
             // intro container
             WelcomeWidget(
@@ -31,88 +32,94 @@ class SignUpScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Form(
                   key: formKey,
-                  child: Column(
-                    spacing: 30,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomTextfieldWithLabel(
-                        text: 'Name',
-                        hintText: 'Full name',
-                        prefixIcon: Icon(Icons.person),
-                        controller: TextEditingController(),
-                        validator: Validations.validateName,
-                      ),
-                      CustomTextfieldWithLabel(
-                        text: 'Email',
-                        hintText: 'Registerd email address',
-                        prefixIcon: Icon(Icons.person),
-                        controller: TextEditingController(),
-                        validator: Validations.validateEmail,
-                      ),
-                      Column(
-                        spacing: 10,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                'Phone Number',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              Text(
-                                ' *',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.errorColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                          PhoneNumberField(
-                            controller: TextEditingController(),
-                            validator: Validations.validatePhoneNumber,
-                          ),
-                        ],
-                      ),
-                      CustomcoloredButton(
-                        text: 'Create an Account',
-                        height: 60,
-                        width: double.infinity,
-                      ),
-                      Text.rich(
-                        textAlign: TextAlign.center,
-                        TextSpan(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      spacing: 30,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomTextfieldWithLabel(
+                          text: 'Name',
+                          hintText: 'Full name',
+                          prefixIcon: Icon(Icons.person),
+                          controller: TextEditingController(),
+                          validator: Validations.validateName,
+                        ),
+                        CustomTextfieldWithLabel(
+                          text: 'Email',
+                          hintText: 'Registerd email address',
+                          prefixIcon: Icon(Icons.person),
+                          keyboardType: TextInputType.emailAddress,
+                          controller: TextEditingController(),
+                          validator: Validations.validateEmail,
+                        ),
+                        Column(
+                          spacing: 10,
                           children: [
-                            TextSpan(
-                              text: "Already have an account?  ",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                color: AppColors.lightGrey,
-                              ),
+                            Row(
+                              children: [
+                                Text(
+                                  'Phone Number',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                Text(
+                                  ' *',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColors.errorColor,
+                                  ),
+                                ),
+                              ],
                             ),
-                            TextSpan(
-                              text: "Sign In",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.lightPrimary,
-                              ),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => LoginScreen()),
-                                  );
-                                },
+                            PhoneNumberField(
+                              controller: TextEditingController(),
+                              validator: Validations.validatePhoneNumber,
                             ),
                           ],
                         ),
-                      ),
-                    ],
+                        CustomcoloredButton(
+                          text: 'Create an Account',
+                          height: 60,
+                          width: double.infinity,
+                          onTap: () {
+                            if (formKey.currentState!.validate()) {}
+                          },
+                        ),
+                        Text.rich(
+                          textAlign: TextAlign.center,
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: "Already have an account?  ",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  color: AppColors.lightGrey,
+                                ),
+                              ),
+                              TextSpan(
+                                text: "Sign In",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.lightPrimary,
+                                ),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => LoginScreen()),
+                                    );
+                                  },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
