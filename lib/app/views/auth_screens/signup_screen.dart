@@ -86,7 +86,6 @@ class SignUpScreen extends StatelessWidget {
                           height: 60,
                           width: double.infinity,
                           onTap: () {
-<<<<<<< HEAD
                             if (formKey.currentState!.validate()) {
                               Navigator.push(
                                   context,
@@ -94,9 +93,6 @@ class SignUpScreen extends StatelessWidget {
                                     builder: (context) => OtpScreen(),
                                   ));
                             }
-=======
-                            if (formKey.currentState!.validate()) {}
->>>>>>> 41e2c5f086043b8eb663bbf3a84519911ef50887
                           },
                         ),
                         Text.rich(

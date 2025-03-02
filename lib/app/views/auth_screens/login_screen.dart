@@ -2,10 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
 import 'package:houseboat_booking/app/utils/validations.dart';
-<<<<<<< HEAD
 import 'package:houseboat_booking/app/views/auth_screens/otp_screen.dart';
-=======
->>>>>>> 41e2c5f086043b8eb663bbf3a84519911ef50887
 import 'package:houseboat_booking/app/views/auth_screens/signup_screen.dart';
 import 'package:houseboat_booking/app/views/auth_screens/welcome_widget.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
@@ -95,7 +92,6 @@ class LoginScreen extends StatelessWidget {
                           height: 60,
                           width: double.infinity,
                           onTap: () {
-<<<<<<< HEAD
                             if (formKey.currentState!.validate()) {
                               Navigator.push(
                                   context,
@@ -103,9 +99,6 @@ class LoginScreen extends StatelessWidget {
                                     builder: (context) => OtpScreen(),
                                   ));
                             }
-=======
-                            if (formKey.currentState!.validate()) {}
->>>>>>> 41e2c5f086043b8eb663bbf3a84519911ef50887
                           },
                         ),
                         Text.rich(
