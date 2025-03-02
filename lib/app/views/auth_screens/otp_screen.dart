@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
-import 'package:houseboat_booking/app/views/home/home_nav_screen.dart';
+import 'package:houseboat_booking/app/views/bottom_nav/bottom_nav_screen.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
 import 'package:pinput/pinput.dart';
 

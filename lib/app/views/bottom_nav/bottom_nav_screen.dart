@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/views/bottom_nav/tabs/profile/profile_screen.dart';
 
 class HomeNavScreen extends StatefulWidget {
   const HomeNavScreen({super.key});
@@ -17,7 +18,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
     Center(child: Text('Screen 2 - Search Screen')),
     Center(child: Text('Screen 3 - Booking history Screen')),
     Center(child: Text('Screen 4 - Favorite/cart Screen')),
-    Center(child: Text('Screen 5 -  Profile Screen')),
+    ProfileScreen() // Screen 5 -  Profile Screen
   ];
 
   final List<IconData> navIcons = [
