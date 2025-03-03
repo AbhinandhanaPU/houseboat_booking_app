@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/theme.dart';
-import 'package:houseboat_booking/app/views/splash_screen.dart';
+import 'package:houseboat_booking/app/views/auth_screens/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       darkTheme: AppTheme.darkTheme,
-      home: SplashScreen(),
+      home: WelcomeScreen(),
     );
   }
 }
