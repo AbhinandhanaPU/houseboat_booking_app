@@ -44,7 +44,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
   Widget _buildBottonNavBar() {
     return Container(
       height: 65,
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+      margin: const EdgeInsets.only(left: 20, right: 20, bottom: 15),
       decoration: BoxDecoration(
         color: AppColors.backgroundSecondary,
         borderRadius: BorderRadius.circular(40),

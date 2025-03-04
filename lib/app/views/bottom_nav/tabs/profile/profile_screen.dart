@@ -75,39 +75,72 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-          child: Column(
-            spacing: 10,
-            children: [
-              // Profile Picture
-              CircleAvatar(
-                radius: 51,
-                backgroundColor: AppColors.lightGrey.withAlpha(128),
-                child: CircleAvatar(
-                  radius: 50,
-                  backgroundColor: AppColors.backgroundSecondary,
-                  foregroundColor: AppColors.whiteColor,
-                  child: const Text(
-                    "FN",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
+          padding: const EdgeInsets.only(left: 25, right: 25, top: 10),
+          child: SingleChildScrollView(
+            child: Column(
+              spacing: 15,
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: AppColors.lightGrey,
+                      width: 0.5,
                     ),
                   ),
+                  child: Row(
+                    spacing: 20,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(
+                        radius: 31,
+                        backgroundColor: AppColors.lightGrey.withAlpha(128),
+                        child: CircleAvatar(
+                          radius: 30,
+                          backgroundColor: AppColors.backgroundSecondary,
+                          foregroundColor: AppColors.whiteColor,
+                          child: const Text(
+                            "FN",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Profile',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const Text(
+                            'Full Name',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.lightGrey,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 18,
+                        color: AppColors.lightGrey,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-
-              // Full Name
-              const Text(
-                'Full Name',
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-              Expanded(
-                child: ListView.separated(
+                ListView.separated(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
                   itemCount: items.length,
                   separatorBuilder: (context, index) => SizedBox(height: 10),
                   itemBuilder: (context, index) {
@@ -118,14 +151,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     );
                   },
                 ),
-              ),
-              ProfileItemCard(
-                title: 'Logout',
-                leadingIcon: Icons.power_settings_new,
-                iconColor: AppColors.errorColor,
-                textColor: AppColors.errorColor,
-              ),
-            ],
+                ProfileItemCard(
+                  title: 'Logout',
+                  leadingIcon: Icons.power_settings_new,
+                  iconColor: AppColors.errorColor,
+                  textColor: AppColors.errorColor,
+                ),
+              ],
+            ),
           ),
         ),
       ),

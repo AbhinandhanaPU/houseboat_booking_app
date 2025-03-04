@@ -23,7 +23,7 @@ class CustomOutlinedButton extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(10),
           border: Border.all(color: AppColors.lightPrimary),
         ),
         child: Center(
