@@ -11,7 +11,8 @@ class CustomTextfieldWithoutLabel extends StatelessWidget {
   final TextInputType? keyboardType;
   final int maxLines;
   final bool obscureText;
-  final Function()? onTap;
+  final VoidCallback? onTap;
+  final bool readOnly;
 
   const CustomTextfieldWithoutLabel({
     super.key,
@@ -25,6 +26,7 @@ class CustomTextfieldWithoutLabel extends StatelessWidget {
     this.maxLines = 1,
     this.obscureText = false,
     this.onTap,
+    this.readOnly = false,
   });
 
   @override
@@ -37,6 +39,7 @@ class CustomTextfieldWithoutLabel extends StatelessWidget {
       obscureText: obscureText,
       obscuringCharacter: '*',
       onTap: onTap,
+      readOnly: readOnly,
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.backgroundSecondary,

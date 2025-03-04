@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
 
-class CustomcoloredButton extends StatelessWidget {
+class CustomOutlinedButton extends StatelessWidget {
   final String text;
   final double height;
   final double width;
   final VoidCallback onTap;
 
-  const CustomcoloredButton({
+  const CustomOutlinedButton({
     super.key,
     required this.text,
     required this.height,
@@ -24,14 +24,7 @@ class CustomcoloredButton extends StatelessWidget {
         height: height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          gradient: LinearGradient(
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            colors: [
-              AppColors.lightPrimary,
-              AppColors.darkPrimary,
-            ],
-          ),
+          border: Border.all(color: AppColors.lightPrimary),
         ),
         child: Center(
           child: Text(

@@ -12,7 +12,7 @@ class CustomTextfieldWithLabel extends StatelessWidget {
   final TextInputType? keyboardType;
   final int maxLines;
   final bool obscureText;
-  final Function()? onTap;
+  final VoidCallback? onTap;
 
   const CustomTextfieldWithLabel({
     super.key,
