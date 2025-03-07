@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/views/bottom_nav/tabs/home/home_screen.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/profile/profile_screen.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/search/search_screen.dart';
 
@@ -15,7 +16,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
 
   // List of screens corresponding to each navigation item
   List<Widget> tabWidgets = [
-    Center(child: Text('Screen 1 - Home Screen ')),
+    HomeScreen(), // Screen 1 - Home Screen
     SearchScreen(), // Screen 2 - Search Screen
     Center(child: Text('Screen 3 - Booking history Screen')),
     Center(child: Text('Screen 4 - Favorite/cart Screen')),
