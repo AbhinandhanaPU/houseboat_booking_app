@@ -50,6 +50,7 @@ class HomeScreen extends StatelessWidget {
                           productPlace: 'Alleppey',
                           productPrice: 8000,
                           onTap: () {},
+                          onFavoriteToggle: () {},
                         );
                       },
                     ),

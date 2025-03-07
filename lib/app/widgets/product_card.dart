@@ -6,15 +6,20 @@ class ProductCard extends StatelessWidget {
   final String productName;
   final String productPlace;
   final int productPrice;
+  final bool isFavorite;
   final VoidCallback onTap;
+  final VoidCallback onFavoriteToggle;
 
-  const ProductCard(
-      {super.key,
-      required this.productImage,
-      required this.productName,
-      required this.productPlace,
-      required this.productPrice,
-      required this.onTap});
+  const ProductCard({
+    super.key,
+    required this.productImage,
+    required this.productName,
+    required this.productPlace,
+    required this.productPrice,
+    required this.onTap,
+    required this.onFavoriteToggle,
+    this.isFavorite = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -45,16 +50,34 @@ class ProductCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    productName,
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-                  ),
-                  const SizedBox(height: 3),
-                  Text(
-                    productPlace,
-                    style: TextStyle(
-                      color: AppColors.lightPrimary,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            productName,
+                            style: const TextStyle(
+                                fontSize: 17, fontWeight: FontWeight.w500),
+                          ),
+                          const SizedBox(height: 3),
+                          Text(
+                            productPlace,
+                            style: TextStyle(
+                              color: AppColors.lightPrimary,
+                            ),
+                          ),
+                        ],
+                      ),
+                      IconButton(
+                        onPressed: onFavoriteToggle,
+                        icon: Icon(
+                          isFavorite ? Icons.favorite : Icons.favorite_border,
+                          color: isFavorite ? AppColors.lightPrimary : null,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 10),
                   Align(
@@ -62,9 +85,7 @@ class ProductCard extends StatelessWidget {
                     child: Text.rich(
                       TextSpan(
                         children: [
-                          const TextSpan(
-                            text: "Price from ",
-                          ),
+                          const TextSpan(text: "Price from "),
                           TextSpan(
                             text: '₹$productPrice  ',
                             style: const TextStyle(
@@ -72,9 +93,7 @@ class ProductCard extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const TextSpan(
-                            text: "1 Night, 2 Adults",
-                          ),
+                          const TextSpan(text: "1 Night, 2 Adults"),
                         ],
                       ),
                     ),
