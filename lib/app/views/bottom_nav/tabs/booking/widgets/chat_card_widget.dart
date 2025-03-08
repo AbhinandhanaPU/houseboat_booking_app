@@ -31,7 +31,12 @@ class ChatCardWidget extends StatelessWidget {
             radius: 30,
             foregroundImage: AssetImage(profilePicture),
           ),
-          title: Text(userName),
+          title: Expanded(
+            child: Text(
+              userName,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
           subtitle: Row(
             spacing: 10,
             children: [

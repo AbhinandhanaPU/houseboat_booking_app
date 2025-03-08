@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
-import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/booking_home.dart';
+import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/screens/booking_home.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/home/home_screen.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/profile/profile_screen.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/search/search_screen.dart';

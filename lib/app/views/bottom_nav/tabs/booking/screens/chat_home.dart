@@ -43,21 +43,24 @@ class ChatHome extends StatelessWidget {
         'messageStatus': 'seen',
       },
     ];
-    return ListView.builder(
-      itemCount: chatList.length,
-      itemBuilder: (context, index) {
-        final chat = chatList[index];
-        return ChatCardWidget(
-          profilePicture: chat['profilePicture'],
-          userName: chat['userName'],
-          lastMessage: chat['lastMessage'],
-          messageTime: chat['messageTime'],
-          messageStatus: chat['messageStatus'],
-          onTap: () {
-            // Navigator.push(context,MaterialPageRoute(builder: (context) =>  ,));
-          },
-        );
-      },
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: ListView.builder(
+        itemCount: chatList.length,
+        itemBuilder: (context, index) {
+          final chat = chatList[index];
+          return ChatCardWidget(
+            profilePicture: chat['profilePicture'],
+            userName: chat['userName'],
+            lastMessage: chat['lastMessage'],
+            messageTime: chat['messageTime'],
+            messageStatus: chat['messageStatus'],
+            onTap: () {
+              // Navigator.push(context,MaterialPageRoute(builder: (context) =>  ,));
+            },
+          );
+        },
+      ),
     );
   }
 }
