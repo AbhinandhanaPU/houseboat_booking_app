@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/booking_home.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/home/home_screen.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/profile/profile_screen.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/search/search_screen.dart';
@@ -19,7 +20,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
   List<Widget> tabWidgets = [
     HomeScreen(), // Screen 1 - Home Screen
     SearchScreen(), // Screen 2 - Search Screen
-    Center(child: Text('Screen 3 - Booking history Screen')),
+    BookingHomeScreen(), // Screen 3 - Booking history Screen
     WishlistScreen(), //  Screen 4 - Favorite/cart/WishList Screen
     ProfileScreen() // Screen 5 -  Profile Screen
   ];

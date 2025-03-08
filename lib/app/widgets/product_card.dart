@@ -28,8 +28,12 @@ class ProductCard extends StatelessWidget {
       child: Container(
         width: 300,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
           color: AppColors.backgroundSecondary,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: AppColors.lightGrey,
+            width: 0.4,
+          ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,7 +91,7 @@ class ProductCard extends StatelessWidget {
                         children: [
                           const TextSpan(text: "Price from "),
                           TextSpan(
-                            text: '₹$productPrice  ',
+                            text: '₹$productPrice ',
                             style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
