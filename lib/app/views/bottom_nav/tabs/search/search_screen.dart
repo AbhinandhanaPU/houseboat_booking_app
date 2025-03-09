@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
 import 'package:houseboat_booking/app/utils/picker_utils.dart';
+import 'package:houseboat_booking/app/widgets/appbar_custom.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
 import 'package:houseboat_booking/app/widgets/counter_field.dart';
 import 'package:houseboat_booking/app/widgets/custom_textfield_without_label.dart';
@@ -23,42 +24,50 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          child: Column(
-            spacing: 15,
-            children: [
-              CustomTextfieldWithoutLabel(
-                hintText: 'Location',
-                prefixIcon: const Icon(Icons.location_on_outlined),
-                controller: TextEditingController(),
-              ),
-              CustomTextfieldWithoutLabel(
-                hintText: 'Check-In Date',
-                prefixIcon: const Icon(Icons.calendar_month_outlined),
-                controller: TextEditingController(),
-                onTap: () async {
-                  final date = await PickerUtils.pickDate(context);
-                  log(date.toString());
-                },
-              ),
-              CustomTextfieldWithoutLabel(
-                hintText: '2 Adults - 0 Child',
-                prefixIcon: const Icon(Icons.group_outlined),
-                controller: guestController,
-                readOnly: true,
-                onTap: () => _showGuestSelectionDialog(),
-              ),
-              CustomcoloredButton(
-                text: 'SEARCH',
-                height: 50,
-                width: double.infinity,
-                onTap: () {},
-              ),
-            ],
+    return Scaffold(
+      appBar: CustomAppBar(
+        showBackButton: false,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.chat_outlined),
           ),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: Column(
+          spacing: 15,
+          children: [
+            CustomTextfieldWithoutLabel(
+              hintText: 'Location',
+              prefixIcon: const Icon(Icons.location_on_outlined),
+              controller: TextEditingController(),
+            ),
+            CustomTextfieldWithoutLabel(
+              hintText: 'Check-In Date',
+              prefixIcon: const Icon(Icons.calendar_month_outlined),
+              controller: TextEditingController(),
+              readOnly: true,
+              onTap: () async {
+                final date = await PickerUtils.pickDate(context);
+                log(date.toString());
+              },
+            ),
+            CustomTextfieldWithoutLabel(
+              hintText: '2 Adults - 0 Child',
+              prefixIcon: const Icon(Icons.group_outlined),
+              controller: guestController,
+              readOnly: true,
+              onTap: () => _showGuestSelectionDialog(),
+            ),
+            CustomcoloredButton(
+              text: 'SEARCH',
+              height: 50,
+              width: double.infinity,
+              onTap: () {},
+            ),
+          ],
         ),
       ),
     );

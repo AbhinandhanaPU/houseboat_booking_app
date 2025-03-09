@@ -17,4 +17,5 @@ class AppColors {
 
   // Additional Colors
   static const Color lightGrey = Color(0xffB3B3B3);
+  static const Color transparent = Colors.transparent;
 }

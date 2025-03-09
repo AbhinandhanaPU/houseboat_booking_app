@@ -3,6 +3,7 @@ import 'package:houseboat_booking/app/utils/colors.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/screens/booking_history.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/screens/chat_home.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/screens/payment_history.dart';
+import 'package:houseboat_booking/app/widgets/appbar_custom.dart';
 
 class BookingHomeScreen extends StatelessWidget {
   const BookingHomeScreen({super.key});
@@ -12,47 +13,32 @@ class BookingHomeScreen extends StatelessWidget {
     return DefaultTabController(
       initialIndex: 0,
       length: 3,
-      child: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            automaticallyImplyLeading: false,
-            title: Text(
-              'App Name',
-              style: TextStyle(
-                fontSize: 23,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            actions: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.notifications_active_outlined),
-              ),
+      child: Scaffold(
+        appBar: CustomAppBar(
+          showBackButton: false,
+          bottom: TabBar(
+            tabs: [
+              Tab(text: 'Bookings'),
+              Tab(text: 'Payments'),
+              Tab(text: 'Chats'),
             ],
-            bottom: TabBar(
-              tabs: [
-                Tab(text: 'Bookings'),
-                Tab(text: 'Payments'),
-                Tab(text: 'Chats'),
-              ],
-              labelColor: AppColors.lightPrimary,
-              indicatorColor: AppColors.lightPrimary,
-              labelStyle: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+            labelColor: AppColors.lightPrimary,
+            indicatorColor: AppColors.lightPrimary,
+            labelStyle: TextStyle(
+              fontWeight: FontWeight.bold,
             ),
           ),
-          body: TabBarView(children: [
-            // Bookings Screen
-            BookingHistoryScreen(),
-
-            // Payment History Screen
-            PaymentHistory(),
-
-            // all chat list screen
-            ChatHome(),
-          ]),
         ),
+        body: TabBarView(children: [
+          // Bookings Screen
+          BookingHistoryScreen(),
+
+          // Payment History Screen
+          PaymentHistory(),
+
+          // all chat list screen
+          ChatHome(),
+        ]),
       ),
     );
   }
