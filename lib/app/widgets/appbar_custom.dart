@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/views/notifications/notifications.dart';
+import 'package:houseboat_booking/app/widgets/notification_badge_widget.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
@@ -40,9 +42,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
 
       actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.notifications_active_outlined),
+        NotificationBadge(
+          notificationCount: 6,
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => NotificationScreen(),
+                ));
+          },
         ),
         if (actions != null) ...actions!,
         SizedBox(width: 15),
