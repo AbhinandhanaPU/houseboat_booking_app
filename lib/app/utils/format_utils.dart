@@ -58,4 +58,29 @@ class FormatUtils {
       return timeStr;
     }
   }
+
+  static String calculateDurationFromString(
+      String checkInDate, String checkOutDate) {
+    // Parse the date strings to DateTime
+    DateTime checkIn = DateFormat('dd MMM yyyy').parse(checkInDate);
+    DateTime checkOut = DateFormat('dd MMM yyyy').parse(checkOutDate);
+
+    // Find the difference between dates
+    Duration duration = checkOut.difference(checkIn);
+
+    int days = duration.inDays;
+    int hours = duration.inHours % 24;
+    int minutes = duration.inMinutes % 60;
+
+    // Return the result in the desired format
+    if (days > 0) {
+      return '$days Night${days > 1 ? 's' : ''}';
+    } else if (hours > 0) {
+      return '$hours Hour${hours > 1 ? 's' : ''}';
+    } else if (minutes > 0) {
+      return '$minutes Minute${minutes > 1 ? 's' : ''}';
+    } else {
+      return 'Less than a minute';
+    }
+  }
 }

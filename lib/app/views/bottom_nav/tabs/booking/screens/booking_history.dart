@@ -53,9 +53,9 @@ class BookingHistoryScreen extends StatelessWidget {
           {'Advance Amount': '₹20,000'},
           {'Balance Amount': '₹5,000'},
         ],
-        'checkInDate': '20 June 2025',
+        'checkInDate': '20 Jun 2025',
         'checkInTime': '11:30 AM',
-        'checkOutDate': '21 June 2025',
+        'checkOutDate': '21 Jun 2025',
         'checkOutTime': '10:00 AM',
         'bookingStatus': 'Cancelled'
       },
