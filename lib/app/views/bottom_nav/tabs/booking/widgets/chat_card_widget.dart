@@ -31,11 +31,10 @@ class ChatCardWidget extends StatelessWidget {
             radius: 30,
             foregroundImage: AssetImage(profilePicture),
           ),
-          title: Expanded(
-            child: Text(
-              userName,
-              overflow: TextOverflow.ellipsis,
-            ),
+          title: Text(
+            userName,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
           subtitle: Row(
             spacing: 10,

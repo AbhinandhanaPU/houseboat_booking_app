@@ -29,12 +29,11 @@ class PaymentCard extends StatelessWidget {
             radius: 25,
             foregroundImage: AssetImage(profilePicture),
           ),
-          title: Expanded(
-            child: Text(
-              userName,
-              style: TextStyle(fontWeight: FontWeight.bold),
-              overflow: TextOverflow.ellipsis,
-            ),
+          title: Text(
+            userName,
+            maxLines: 1,
+            style: TextStyle(fontWeight: FontWeight.bold),
+            overflow: TextOverflow.ellipsis,
           ),
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
