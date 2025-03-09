@@ -28,7 +28,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
   final List<IconData> navIcons = [
     Icons.home,
     Icons.search,
-    Icons.event_available,
+    Icons.event_available_outlined,
     Icons.favorite_border,
     Icons.person,
   ];

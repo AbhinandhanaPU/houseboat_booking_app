@@ -16,15 +16,17 @@ class BookingHomeScreen extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            title: Text('History'),
+            title: Text(
+              'App Name',
+              style: TextStyle(
+                fontSize: 23,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             actions: [
               IconButton(
                 onPressed: () {},
                 icon: Icon(Icons.notifications_active_outlined),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.more_vert),
               ),
             ],
             bottom: TabBar(
