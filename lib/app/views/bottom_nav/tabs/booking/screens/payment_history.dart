@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/data/payment_history.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/widgets/payment_card.dart';
 
 class PaymentHistory extends StatelessWidget {
@@ -9,13 +10,14 @@ class PaymentHistory extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: ListView.builder(
-        itemCount: 2,
+        itemCount: paymentList.length,
         itemBuilder: (context, index) {
+          final payment = paymentList[index];
           return PaymentCard(
-            profilePicture: 'assets/images/houseboat1.jpg',
-            userName: 'Venice Houseboats',
-            date: '11/12/2025',
-            paymentAmount: 8000,
+            profilePicture: payment['profilePicture'],
+            userName: payment['userName'],
+            date: payment['date'],
+            paymentAmount: payment['paymentAmount'],
             onTap: () {},
           );
         },

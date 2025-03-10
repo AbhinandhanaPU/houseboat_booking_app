@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/data/houseboat_sections.dart';
 import 'package:houseboat_booking/app/widgets/appbar_custom.dart';
 import 'package:houseboat_booking/app/widgets/product_card.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
-
-  final List<String> sectionTitles = [
-    'Hot Deals',
-    'Luxury Houseboats',
-    'Budget-Friendly Stays'
-  ];
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,15 +26,19 @@ class HomeScreen extends StatelessWidget {
           bottom: 5,
         ),
         child: ListView.separated(
-          itemCount: sectionTitles.length,
+          itemCount: houseboatSections.length,
           separatorBuilder: (context, index) => const SizedBox(height: 20),
-          itemBuilder: (context, sectionIndex) {
+          itemBuilder: (context, index) {
+            final section = houseboatSections[index];
+            final sectionTitle = section['sectionTitle'];
+            final products = section['products'];
+
             return Column(
               spacing: 10,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  sectionTitles[sectionIndex],
+                  sectionTitle,
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -49,15 +48,16 @@ class HomeScreen extends StatelessWidget {
                   height: 255,
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 3,
+                    itemCount: products.length,
                     separatorBuilder: (context, index) =>
                         const SizedBox(width: 15),
-                    itemBuilder: (context, index) {
+                    itemBuilder: (context, productIndex) {
+                      final product = products[productIndex];
                       return ProductCard(
-                        productImage: 'assets/images/houseboat1.jpg',
-                        productName: 'Venice Houseboat',
-                        productPlace: 'Alleppey',
-                        productPrice: 8000,
+                        productImage: product['productImage'],
+                        productName: product['productName'],
+                        productPlace: product['productPlace'],
+                        productPrice: product['productPrice'],
                         onTap: () {},
                         onFavoriteToggle: () {},
                       );
