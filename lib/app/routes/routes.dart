@@ -11,4 +11,6 @@ class AppRoutes {
   static String chatHome = '/chatHome';
   static String wishList = '/wishList';
   static String profile = '/profile';
+  static String notification = '/notification';
+  static String houseBoatScreen = '/houseBoatScreen';
 }

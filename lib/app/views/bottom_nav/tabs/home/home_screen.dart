@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/data/houseboat_sections.dart';
 import 'package:houseboat_booking/app/widgets/appbar_custom.dart';
 import 'package:houseboat_booking/app/widgets/product_card.dart';
 
@@ -54,10 +55,10 @@ class HomeScreen extends StatelessWidget {
                         const SizedBox(width: 15),
                     itemBuilder: (context, index) {
                       return ProductCard(
-                        productImage: 'assets/images/houseboat1.jpg',
-                        productName: 'Venice Houseboat',
-                        productPlace: 'Alleppey',
-                        productPrice: 8000,
+                        productImage: product['productImage'],
+                        productName: product['productName'],
+                        productPlace: product['productPlace'],
+                        productPrice: product['productPrice'],
                         onTap: () {},
                         onFavoriteToggle: () {},
                       );
