@@ -43,7 +43,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
 
       actions: [
-        NotificationBadge(
+        IconWithBadge(
+          icon: Icons.notifications,
+          bardeColor: AppColors.errorColor,
           notificationCount: notifications.length,
           onTap: () {
             Navigator.push(
