@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/data/notifications.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
 import 'package:houseboat_booking/app/views/notifications/notifications.dart';
 import 'package:houseboat_booking/app/widgets/icon_with_badge.dart';

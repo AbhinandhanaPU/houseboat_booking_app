@@ -11,63 +11,60 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final List<Map<String, dynamic>> items = [
+  final List<Map<String, dynamic>> profileItems = [
     {
       "title": "Personal Info",
       "leading": Icons.person,
       "trailing": Icons.arrow_forward_ios,
-      // "destination": SettingsScreen(),
+      "destination": '/personalInfo',
     },
     {
       "title": "Payment Settings",
-      "leading":
-          'assets/icons/credit_card_gear_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg',
+      "leading": 'assets/icons/credit_card_gear.svg',
       "trailing": Icons.arrow_forward_ios,
-      // "destination": NotificationsScreen(),
+      "destination": '/paymentSettings',
     },
     {
       "title": "Booking & Cancellation Policies",
-      "leading":
-          'assets/icons/lab_profile_24dp_E8EAED_FILL0_wght0_GRAD0_opsz24.svg',
+      "leading": 'assets/icons/lab_profile.svg',
       "trailing": Icons.arrow_forward_ios,
-      // "destination": HelpScreen(),
+      "destination": '/bookingPolicies',
     },
     {
       "title": "Security & Account Settings",
-      "leading":
-          'assets/icons/lab_profile_24dp_E8EAED_FILL0_wght0_GRAD0_opsz24.svg',
+      "leading": 'assets/icons/lab_profile.svg',
       "trailing": Icons.arrow_forward_ios,
-      // "destination": HelpScreen(),
+      "destination": '/securitySettings',
     },
     {
       "title": "Notifications",
       "leading": Icons.notifications_active_outlined,
       "trailing": Icons.arrow_forward_ios,
-      // "destination": NotificationsScreen(),
+      "destination": '/notifications',
     },
     {
       "title": "Support & Policies",
       "leading": Icons.live_help_outlined,
       "trailing": Icons.arrow_forward_ios,
-      // "destination": HelpScreen(),
+      "destination": '/supportPolicies',
     },
     {
       "title": "How to Book",
       "leading": Icons.event_available_outlined,
       "trailing": Icons.arrow_forward_ios,
-      // "destination": HelpScreen(),
+      "destination": '/howToBook',
     },
     {
-      "title": "Invite a friend",
+      "title": "Invite a Friend",
       "leading": Icons.share,
       "trailing": Icons.arrow_forward_ios,
-      // "destination": HelpScreen(),
+      "destination": '/inviteFriend',
     },
     {
       "title": "App Info",
       "leading": Icons.info_outline,
       "trailing": Icons.arrow_forward_ios,
-      // "destination": HelpScreen(),
+      "destination": '/appInfo',
     },
   ];
 
@@ -150,13 +147,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ListView.separated(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
-                itemCount: items.length,
+                itemCount: profileItems.length,
                 separatorBuilder: (context, index) => SizedBox(height: 10),
                 itemBuilder: (context, index) {
+                  final profileItem = profileItems[index];
                   return ProfileItemCard(
-                    title: items[index]["title"],
-                    leadingIcon: items[index]["leading"],
-                    trailingIcon: items[index]["trailing"],
+                    title: profileItem["title"],
+                    leadingIcon: profileItem["leading"],
+                    trailingIcon: profileItem["trailing"],
                   );
                 },
               ),
