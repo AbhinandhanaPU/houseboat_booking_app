@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/app/utils/colors.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:intl_phone_field/phone_number.dart';
 
@@ -23,15 +22,6 @@ class PhoneNumberField extends StatelessWidget {
       validator: validator,
       decoration: const InputDecoration(
         hintText: "Phone Number",
-        filled: true,
-        fillColor: AppColors.backgroundSecondary,
-        border: OutlineInputBorder(),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: AppColors.lightPrimary,
-            width: 2,
-          ),
-        ),
       ),
       initialCountryCode: 'IN',
       onChanged: (phone) {

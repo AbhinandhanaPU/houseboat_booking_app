@@ -46,7 +46,9 @@ class NotificationScreen extends StatelessWidget {
                   ),
                 );
               }),
-              const Divider(),
+              Divider(
+                color: AppColors.lightGrey.withAlpha(128),
+              ),
             ],
           );
         }).toList(),

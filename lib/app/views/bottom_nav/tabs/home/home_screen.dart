@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/data/houseboat_sections.dart';
+import 'package:houseboat_booking/app/views/houseboat_screens/houseboat_screen.dart';
 import 'package:houseboat_booking/app/widgets/appbar_custom.dart';
 import 'package:houseboat_booking/app/widgets/product_card.dart';
 
@@ -58,7 +59,14 @@ class HomeScreen extends StatelessWidget {
                         productName: product['productName'],
                         productPlace: product['productPlace'],
                         productPrice: product['productPrice'],
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HouseBoatScreen(),
+                            ),
+                          );
+                        },
                         onFavoriteToggle: () {},
                       );
                     },

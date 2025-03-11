@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/views/houseboat_screens/package_details_card.dart';
+import 'package:houseboat_booking/app/widgets/colored_button.dart';
+import 'package:houseboat_booking/app/widgets/icon_text_widget.dart';
+import 'package:houseboat_booking/app/widgets/readmore_text_widget.dart';
 
 class HouseBoatScreen extends StatelessWidget {
   const HouseBoatScreen({super.key});
@@ -16,6 +20,7 @@ class HouseBoatScreen extends StatelessWidget {
             backgroundColor: AppColors.backgroundPrimary,
             child: const Icon(
               Icons.arrow_back,
+              size: 22,
               color: AppColors.whiteColor,
             ),
           ),
@@ -27,6 +32,7 @@ class HouseBoatScreen extends StatelessWidget {
               backgroundColor: AppColors.backgroundPrimary,
               child: const Icon(
                 Icons.chat,
+                size: 22,
                 color: AppColors.whiteColor,
               ),
             ),
@@ -34,6 +40,17 @@ class HouseBoatScreen extends StatelessWidget {
           ),
         ],
       ),
+      persistentFooterButtons: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: CustomcoloredButton(
+            text: 'Book Now',
+            height: 50,
+            width: double.infinity,
+            onTap: () {},
+          ),
+        )
+      ],
       body: Column(
         children: [
           Stack(
@@ -95,18 +112,51 @@ class HouseBoatScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Column(
+              spacing: 10,
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'Alappuzha, Kerala',
-                      style: TextStyle(
-                        color: AppColors.lightPrimary,
-                      ),
+                    IconTextWidget(
+                      icon: Icons.location_on_outlined,
+                      text: 'Alappuzha, Kerala',
+                      textWeight: FontWeight.bold,
+                      iconColor: AppColors.lightPrimary,
+                      textColor: AppColors.lightPrimary,
                     ),
-                    Text('4.9(1.2K Review)',style: TextStyle(),),
+                    IconTextWidget(
+                      icon: Icons.star_border,
+                      text: '4.5 (1.2K Review)',
+                      iconColor: AppColors.lightGrey,
+                      textColor: AppColors.lightGrey,
+                    ),
                   ],
-                )
+                ),
+                Divider(
+                  color: AppColors.lightGrey.withAlpha(128),
+                ),
+                ReadMoreText(
+                  text:
+                      'A traditional houseboat with modern comforts, surreal lake views, well-appointed rooms, an exclusive spa, and fun outdoor activities. ',
+                ),
+                PackageDetailsCard(
+                  packageName: 'Room with Breakfast + Lunch + Dinner',
+                  price: '8000',
+                  additionalInfo: '+ taxes and fees / night',
+                ),
+                Wrap(
+                  spacing: 10,
+                  runSpacing: 5,
+                  children: List.generate(2, (index) {
+                    return IconTextWidget(
+                      icon: Icons.check,
+                      iconColor: AppColors.successColor,
+                      text: 'Free Cancellation available at extra charges',
+                      textColor: AppColors.successColor,
+                    );
+                  }),
+                ),
+                
               ],
             ),
           )

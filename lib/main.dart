@@ -14,8 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Houseboat Booking App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.dark,
       home: WelcomeScreen(),
     );
   }

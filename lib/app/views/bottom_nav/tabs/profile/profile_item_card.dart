@@ -23,7 +23,6 @@ class ProfileItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: AppColors.backgroundSecondary,
       margin: EdgeInsets.all(0),
       child: ListTile(
         leading: leadingIcon != null

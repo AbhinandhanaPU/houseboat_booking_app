@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/app/utils/colors.dart';
 
 class CustomTextfieldWithoutLabel extends StatelessWidget {
   final String hintText;
@@ -41,19 +40,10 @@ class CustomTextfieldWithoutLabel extends StatelessWidget {
       onTap: onTap,
       readOnly: readOnly,
       decoration: InputDecoration(
-        filled: true,
-        fillColor: AppColors.backgroundSecondary,
-        border: OutlineInputBorder(),
         hintText: hintText,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         helperText: helperText,
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: AppColors.lightPrimary,
-            width: 2,
-          ),
-        ),
       ),
     );
   }

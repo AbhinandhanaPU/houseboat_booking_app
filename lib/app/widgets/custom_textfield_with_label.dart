@@ -62,19 +62,10 @@ class CustomTextfieldWithLabel extends StatelessWidget {
           obscuringCharacter: '*',
           onTap: onTap,
           decoration: InputDecoration(
-            filled: true,
-            fillColor: AppColors.backgroundSecondary,
-            border: OutlineInputBorder(),
             hintText: hintText,
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
             helperText: helperText,
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: AppColors.lightPrimary,
-                width: 2,
-              ),
-            ),
           ),
         )
       ],
