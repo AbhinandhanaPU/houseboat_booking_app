@@ -38,7 +38,7 @@ class CustomcoloredButton extends StatelessWidget {
             text,
             style: TextStyle(
               color: AppColors.whiteColor,
-              fontSize: 16,
+              fontSize: 20,
               fontWeight: FontWeight.w600,
             ),
           ),
