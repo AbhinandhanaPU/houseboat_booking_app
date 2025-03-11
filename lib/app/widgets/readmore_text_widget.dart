@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/widgets/text_button.dart';
 
 class ReadMoreText extends StatelessWidget {
   final String text;
@@ -47,21 +48,9 @@ class ReadMoreText extends StatelessWidget {
                 child: Container(
                   color: AppColors.backgroundPrimary,
                   padding: EdgeInsets.only(left: 10),
-                  child: TextButton(
+                  child: CustomTextButton(
                     onPressed: () => showFullTextDialog(context),
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
-                      minimumSize: const Size(0, 0),
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    ),
-                    child: const Text(
-                      'Read More',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: AppColors.lightPrimary,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                    text: 'Read More',
                   ),
                 ),
               ),

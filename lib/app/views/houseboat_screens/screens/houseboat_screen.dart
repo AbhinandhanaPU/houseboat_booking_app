@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/utils/colors.dart';
-import 'package:houseboat_booking/app/views/houseboat_screens/package_details_card.dart';
 import 'package:houseboat_booking/app/views/houseboat_screens/widget/icon_text_container.dart';
+import 'package:houseboat_booking/app/views/houseboat_screens/widget/package_details_card.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
 import 'package:houseboat_booking/app/widgets/icon_text_widget.dart';
 import 'package:houseboat_booking/app/widgets/readmore_text_widget.dart';
+import 'package:houseboat_booking/app/widgets/text_button.dart';
 
 class HouseBoatScreen extends StatelessWidget {
   const HouseBoatScreen({super.key});
@@ -170,21 +171,9 @@ class HouseBoatScreen extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      TextButton(
+                      CustomTextButton(
                         onPressed: () {},
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                          minimumSize: const Size(0, 0),
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        ),
-                        child: const Text(
-                          'View All',
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: AppColors.lightPrimary,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                        text: 'View All',
                       ),
                     ],
                   ),
