@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/data/booking_data.dart';
+import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/screens/booking_details.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/widgets/booking_card.dart';
 
 class BookingHistoryScreen extends StatelessWidget {
@@ -25,7 +26,14 @@ class BookingHistoryScreen extends StatelessWidget {
             checkOutDate: booking['checkOutDate'],
             checkOutTime: booking['checkOutTime'],
             bookingStatus: booking['bookingStatus'],
-            onCardTap: () {},
+            onCardTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BookingDetailsScreen(),
+                ),
+              );
+            },
           );
         },
       ),

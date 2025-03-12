@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/utils/colors.dart';
 
 class KeyValueRow extends StatelessWidget {
   final String keyText;
   final String valueText;
+  final double textSize;
+  final Color textColor;
 
   const KeyValueRow({
     super.key,
     required this.keyText,
     required this.valueText,
+    this.textSize = 14,
+    this.textColor = AppColors.whiteColor,
   });
 
   @override
@@ -21,9 +26,10 @@ class KeyValueRow extends StatelessWidget {
             flex: 3,
             child: Text(
               keyText,
-              style: const TextStyle(
-                fontSize: 14,
+              style: TextStyle(
+                fontSize: textSize,
                 fontWeight: FontWeight.w500,
+                color: textColor,
               ),
             ),
           ),
@@ -31,8 +37,9 @@ class KeyValueRow extends StatelessWidget {
             flex: 4,
             child: Text(
               ':  $valueText',
-              style: const TextStyle(
-                fontSize: 14,
+              style: TextStyle(
+                fontSize: textSize,
+                color: textColor,
               ),
             ),
           ),
