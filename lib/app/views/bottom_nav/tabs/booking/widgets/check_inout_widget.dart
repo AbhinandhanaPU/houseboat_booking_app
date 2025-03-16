@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/theme/colors.dart';
+import 'package:houseboat_booking/app/theme/text_styles.dart';
 
 class CheckInOutWidget extends StatelessWidget {
   final String checkInDate;
@@ -39,10 +40,7 @@ class CheckInOutWidget extends StatelessWidget {
             foregroundColor: AppColors.whiteColor,
             child: Text(
               'To',
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.bold,
-              ),
+              style: AppTextStyles.smallText,
             ),
           ),
 
@@ -65,12 +63,13 @@ class CheckInOutWidget extends StatelessWidget {
     required CrossAxisAlignment alignment,
   }) {
     return Column(
+      spacing: 5,
       crossAxisAlignment: alignment,
       children: [
         Text(
           title,
           style: TextStyle(
-            fontSize: 15,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -80,6 +79,7 @@ class CheckInOutWidget extends StatelessWidget {
               TextSpan(
                 text: "$date ",
                 style: const TextStyle(
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),

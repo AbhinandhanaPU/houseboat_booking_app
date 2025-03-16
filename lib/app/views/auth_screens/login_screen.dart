@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/utils/validations.dart';
 import 'package:houseboat_booking/app/views/auth_screens/otp_screen.dart';
 import 'package:houseboat_booking/app/views/auth_screens/signup_screen.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/theme/colors.dart';
 
 class PaymentCard extends StatelessWidget {
   final String profilePicture;

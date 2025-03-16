@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/widgets/booking_status_badge.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/widgets/check_inout_widget.dart';
 import 'package:houseboat_booking/app/widgets/keyvalue_row_widget.dart';
@@ -114,6 +114,7 @@ class BookingCard extends StatelessWidget {
               checkInTime: checkInTime,
               checkOutDate: checkOutDate,
               checkOutTime: checkOutTime,
+              showDivider: false,
             ),
           ],
         ),

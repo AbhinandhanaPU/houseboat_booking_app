@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/widgets/lottie_animation_widget.dart';
 
 class WelcomeWidget extends StatelessWidget {

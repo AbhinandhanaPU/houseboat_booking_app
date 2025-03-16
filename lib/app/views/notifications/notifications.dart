@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/data/notifications.dart';
-import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/theme/colors.dart';
+import 'package:houseboat_booking/app/widgets/custom_divider.dart';
 import 'package:intl/intl.dart';
 
 class NotificationScreen extends StatelessWidget {
@@ -46,9 +47,7 @@ class NotificationScreen extends StatelessWidget {
                   ),
                 );
               }),
-              Divider(
-                color: AppColors.lightGrey.withAlpha(128),
-              ),
+              CustomDivider(),
             ],
           );
         }).toList(),

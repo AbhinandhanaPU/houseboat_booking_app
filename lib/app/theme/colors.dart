@@ -18,4 +18,8 @@ class AppColors {
   // Additional Colors
   static const Color lightGrey = Color(0xffB3B3B3);
   static const Color transparent = Colors.transparent;
+
+  // Text Colors
+  static const Color textPrimary = Colors.white;
+  static const Color textSecondary = Colors.grey;
 }

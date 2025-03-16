@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/theme/colors.dart';
+import 'package:houseboat_booking/app/theme/text_styles.dart';
 
 class CustomcoloredButton extends StatelessWidget {
   final String text;
@@ -36,11 +37,7 @@ class CustomcoloredButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: TextStyle(
-              color: AppColors.whiteColor,
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-            ),
+            style: AppTextStyles.button,
           ),
         ),
       ),

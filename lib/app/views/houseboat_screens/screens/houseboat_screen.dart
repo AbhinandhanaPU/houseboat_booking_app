@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/views/houseboat_screens/widget/icon_text_container.dart';
 import 'package:houseboat_booking/app/views/houseboat_screens/widget/package_details_card.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
+import 'package:houseboat_booking/app/widgets/custom_divider.dart';
 import 'package:houseboat_booking/app/widgets/icon_text_widget.dart';
 import 'package:houseboat_booking/app/widgets/readmore_text_widget.dart';
 import 'package:houseboat_booking/app/widgets/text_button.dart';
@@ -137,9 +138,7 @@ class HouseBoatScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Divider(
-                    color: AppColors.lightGrey.withAlpha(128),
-                  ),
+                  CustomDivider(),
                   ReadMoreText(
                     maxLines: 2,
                     text:

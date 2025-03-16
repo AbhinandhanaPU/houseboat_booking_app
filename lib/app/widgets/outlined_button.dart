@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/theme/colors.dart';
+import 'package:houseboat_booking/app/theme/text_styles.dart';
 
 class CustomOutlinedButton extends StatelessWidget {
   final String text;
@@ -29,11 +30,7 @@ class CustomOutlinedButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: TextStyle(
-              color: AppColors.whiteColor,
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-            ),
+            style: AppTextStyles.button,
           ),
         ),
       ),

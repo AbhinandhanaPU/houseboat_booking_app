@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:houseboat_booking/app/utils/colors.dart';
+import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/screens/booking_history.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/screens/chat_home.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/screens/payment_history.dart';
