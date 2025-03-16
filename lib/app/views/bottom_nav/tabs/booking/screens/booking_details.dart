@@ -86,7 +86,7 @@ class BookingDetailsScreen extends StatelessWidget {
                 ],
               ),
               CustomDivider(),
-              // Booking Details section
+              // Booking Major Details section
               BookingDetailsSection(
                 title: 'Booking Details',
                 details: [
@@ -103,16 +103,29 @@ class BookingDetailsScreen extends StatelessWidget {
               ),
               CustomDivider(),
 
-              //
+              //Houseboat details
               BookingDetailsSection(
                 title: 'Houseboat Details',
                 subtitle: 'venice Houseboat Luxury',
                 actionText: 'View Houseboat',
                 onActionPressed: () {},
                 details: [
-                  {'key': 'Duration', 'value': '2 Nights'},
-                  {'key': 'Departure Location', 'value': 'Alleppey, Kerala'},
-                  {'key': 'Destination', 'value': 'Round Trip'},
+                  {'key': 'Type', 'value': 'Premium'},
+                  {'key': 'Bedrooms', 'value': '3'},
+                  {'key': 'Max Guests', 'value': '8'},
+                ],
+              ),
+              CustomDivider(),
+
+              // Guest Details Section
+              BookingDetailsSection(
+                title: 'Guest Details',
+                details: [
+                  {'key': 'Primary Guest', 'value': 'Abhinandhana'},
+                  {'key': 'Email Address', 'value': 'Abhinandhana@gmailcom'},
+                  {'key': 'Phone Number', 'value': '+91 1234567890'},
+                  {'key': 'Country', 'value': 'India'},
+                  {'key': 'Guests', 'value': '4 Adults, 1 Child'},
                 ],
               ),
               CustomDivider(),
