@@ -5,6 +5,7 @@ import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/widgets/book
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/widgets/check_inout_widget.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
 import 'package:houseboat_booking/app/widgets/custom_divider.dart';
+import 'package:houseboat_booking/app/widgets/custom_tables.dart';
 import 'package:houseboat_booking/app/widgets/keyvalue_row_widget.dart';
 import 'package:houseboat_booking/app/widgets/outlined_button.dart';
 
@@ -129,6 +130,15 @@ class BookingDetailsScreen extends StatelessWidget {
                 ],
               ),
               CustomDivider(),
+              PaymentDetailsTable(
+                details: [
+                  {"key": "GST (5%)", "value": "₹700"},
+                  {"key": "Total", "value": "₹14,700"},
+                  {"key": "Advance Paid", "value": "₹6,762"},
+                  {"key": "Balance Payment", "value": "₹7,938"},
+                ],
+                onIconPressed: () {},
+              ),
             ],
           ),
         ),
