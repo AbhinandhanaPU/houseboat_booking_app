@@ -106,7 +106,7 @@ class BookingDetailsScreen extends StatelessWidget {
 
               //Houseboat details
               BookingDetailsSection(
-                title: 'Houseboat Details',
+                title: 'Houseboat Info',
                 subtitle: 'venice Houseboat Luxury',
                 actionText: 'View Houseboat',
                 onActionPressed: () {},
@@ -129,15 +129,45 @@ class BookingDetailsScreen extends StatelessWidget {
                   {'key': 'Guests', 'value': '4 Adults, 1 Child'},
                 ],
               ),
-              CustomDivider(),
               PaymentDetailsTable(
+                headeing: "Payment Info",
                 details: [
                   {"key": "GST (5%)", "value": "₹700"},
                   {"key": "Total", "value": "₹14,700"},
                   {"key": "Advance Paid", "value": "₹6,762"},
                   {"key": "Balance Payment", "value": "₹7,938"},
+                  {"key": "Payment Mode", "value": "upi"},
                 ],
                 onIconPressed: () {},
+              ),
+              // Extra Service Details Section
+              BookingDetailsSection(
+                title: 'Extras & Add-ons',
+                actionText: 'Add Services',
+                onActionPressed: () {},
+                details: [
+                  {'key': 'Meal Plan', 'value': 'Kerala Cuisine'},
+                  {'key': 'Activities', 'value': 'No activities booked'},
+                  {'key': 'Add-ons', 'value': 'No Add-ons'},
+                ],
+              ),
+              CustomDivider(),
+
+              // Support & Cancellation Section
+              BookingDetailsSection(
+                title: 'Support & Cancellation',
+                actionText: 'Message',
+                onActionPressed: () {},
+                details: [
+                  {
+                    'key': 'Cancellation Policy',
+                    'value': 'Free cancellation before 24 hrs'
+                  },
+                  {'key': ' Customer Support', 'value': '+91 98765 43210'},
+                ],
+              ),
+              CustomDivider(
+                height: 0,
               ),
             ],
           ),
