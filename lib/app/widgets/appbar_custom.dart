@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/data/notifications.dart';
+import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
-import 'package:houseboat_booking/app/views/notifications/notifications.dart';
 import 'package:houseboat_booking/app/widgets/icon_with_badge.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -48,11 +48,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           bardeColor: AppColors.errorColor,
           notificationCount: notifications.length,
           onTap: () {
-            Navigator.push(
+            Navigator.pushNamed(
               context,
-              MaterialPageRoute(
-                builder: (context) => NotificationScreen(),
-              ),
+              AppRoutes.notification,
             );
           },
         ),

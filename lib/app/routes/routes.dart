@@ -1,16 +1,15 @@
 class AppRoutes {
-  static String welcomeScreen = '/welcomeScreen';
-  static String signUp = '/signUp';
-  static String logIn = '/logIn';
-  static String otpScreen = '/otpScreen';
-  static String bottomNavScreen = '/bottomNavScreen';
-  static String homeScreen = '/homeScreen';
-  static String search = '/search';
-  static String bookingHistory = '/bookingHistory';
-  static String paymentHistory = '/paymentHistory';
-  static String chatHome = '/chatHome';
-  static String wishList = '/wishList';
-  static String profile = '/profile';
-  static String notification = '/notification';
-  static String houseBoatScreen = '/houseBoatScreen';
+  static const String welcomeScreen = '/welcomeScreen';
+  static const String signUp = '/signUp';
+  static const String logIn = '/logIn';
+  static const String otpScreen = '/otpScreen';
+  static const String homeNavScreen = '/homeNavScreen';
+  static const String notification = '/notification';
+  static const String houseBoatScreen = '/houseBoatScreen';
+  static const String homeScreen = '/homeScreen';
+  static const String search = '/search';
+  static const String bookingHome = '/bookingHome';
+  static const String wishList = '/wishList';
+  static const String profile = '/profile';
+  static const String bookingDetails = '/bookingDetails';
 }

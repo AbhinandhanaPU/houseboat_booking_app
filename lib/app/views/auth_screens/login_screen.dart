@@ -1,9 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/utils/validations.dart';
-import 'package:houseboat_booking/app/views/auth_screens/otp_screen.dart';
-import 'package:houseboat_booking/app/views/auth_screens/signup_screen.dart';
 import 'package:houseboat_booking/app/views/auth_screens/welcome_widget.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
 import 'package:houseboat_booking/app/widgets/phone_no_field.dart';
@@ -93,11 +92,10 @@ class LoginScreen extends StatelessWidget {
                           width: double.infinity,
                           onTap: () {
                             if (formKey.currentState!.validate()) {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => OtpScreen(),
-                                  ));
+                              Navigator.pushNamed(
+                                context,
+                                AppRoutes.otpScreen,
+                              );
                             }
                           },
                         ),
@@ -121,10 +119,9 @@ class LoginScreen extends StatelessWidget {
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    Navigator.push(
+                                    Navigator.pushNamed(
                                       context,
-                                      MaterialPageRoute(
-                                          builder: (context) => SignUpScreen()),
+                                      AppRoutes.signUp,
                                     );
                                   },
                               ),

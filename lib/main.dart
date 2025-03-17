@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/routes/router.dart';
+import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/theme.dart';
 import 'package:houseboat_booking/app/views/auth_screens/welcome_screen.dart';
 
@@ -17,6 +19,9 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
+      initialRoute: AppRoutes.welcomeScreen,
+      onGenerateRoute: AppRouter().generateRoute,
+      onUnknownRoute: (settings) => noRoute(settings),
       home: WelcomeScreen(),
     );
   }

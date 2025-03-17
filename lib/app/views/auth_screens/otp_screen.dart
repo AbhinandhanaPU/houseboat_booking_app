@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
-import 'package:houseboat_booking/app/views/bottom_nav/bottom_nav_screen.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
 import 'package:pinput/pinput.dart';
 
@@ -81,11 +81,10 @@ class OtpScreen extends StatelessWidget {
                 height: 60,
                 width: double.infinity,
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HomeNavScreen(),
-                      ));
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.homeNavScreen,
+                  );
                 },
               ),
               Text.rich(

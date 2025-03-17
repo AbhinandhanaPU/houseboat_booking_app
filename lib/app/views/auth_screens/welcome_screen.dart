@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
-import 'package:houseboat_booking/app/views/auth_screens/login_screen.dart';
-import 'package:houseboat_booking/app/views/auth_screens/signup_screen.dart';
 import 'package:houseboat_booking/app/widgets/lottie_animation_widget.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -86,11 +85,10 @@ class WelcomeScreen extends StatelessWidget {
                         Expanded(
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => SignUpScreen(),
-                                  ));
+                              Navigator.pushNamed(
+                                context,
+                                AppRoutes.signUp,
+                              );
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -121,11 +119,10 @@ class WelcomeScreen extends StatelessWidget {
                           child: Center(
                             child: GestureDetector(
                               onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => LoginScreen(),
-                                    ));
+                                Navigator.pushNamed(
+                                  context,
+                                  AppRoutes.logIn,
+                                );
                               },
                               child: Text(
                                 'Sign In',
