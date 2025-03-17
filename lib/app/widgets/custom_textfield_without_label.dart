@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/theme/text_styles.dart';
 
 class CustomTextfieldWithoutLabel extends StatelessWidget {
   final String hintText;
@@ -44,6 +45,7 @@ class CustomTextfieldWithoutLabel extends StatelessWidget {
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         helperText: helperText,
+        helperStyle: AppTextStyles.subtitle,
       ),
     );
   }

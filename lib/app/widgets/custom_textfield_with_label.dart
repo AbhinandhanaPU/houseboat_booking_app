@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
+import 'package:houseboat_booking/app/theme/text_styles.dart';
 
 class CustomTextfieldWithLabel extends StatelessWidget {
   final String text;
@@ -13,6 +14,7 @@ class CustomTextfieldWithLabel extends StatelessWidget {
   final int maxLines;
   final bool obscureText;
   final VoidCallback? onTap;
+  final bool readOnly;
 
   const CustomTextfieldWithLabel({
     super.key,
@@ -27,6 +29,7 @@ class CustomTextfieldWithLabel extends StatelessWidget {
     this.maxLines = 1,
     this.obscureText = false,
     this.onTap,
+    this.readOnly = false,
   });
 
   @override
@@ -61,11 +64,13 @@ class CustomTextfieldWithLabel extends StatelessWidget {
           obscureText: obscureText,
           obscuringCharacter: '*',
           onTap: onTap,
+          readOnly: readOnly,
           decoration: InputDecoration(
             hintText: hintText,
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
             helperText: helperText,
+            helperStyle: AppTextStyles.subtitle,
           ),
         )
       ],

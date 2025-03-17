@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/views/houseboat_screens/widget/icon_text_container.dart';
 import 'package:houseboat_booking/app/views/houseboat_screens/widget/package_details_card.dart';
@@ -50,7 +51,12 @@ class HouseBoatScreen extends StatelessWidget {
             text: 'Book Now',
             height: 50,
             width: double.infinity,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                AppRoutes.guestDetails,
+              );
+            },
           ),
         )
       ],

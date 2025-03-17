@@ -11,6 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color backgroundColor;
   final double elevation;
   final PreferredSizeWidget? bottom;
+  final bool showNotification;
 
   const CustomAppBar({
     super.key,
@@ -20,6 +21,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.backgroundColor = AppColors.transparent,
     this.elevation = 0.0,
     this.bottom,
+    this.showNotification = true,
   });
 
   @override
@@ -43,17 +45,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
 
       actions: [
-        IconWithBadge(
-          icon: Icons.notifications,
-          bardeColor: AppColors.errorColor,
-          notificationCount: notifications.length,
-          onTap: () {
-            Navigator.pushNamed(
-              context,
-              AppRoutes.notification,
-            );
-          },
-        ),
+        showNotification
+            ? IconWithBadge(
+                icon: Icons.notifications,
+                bardeColor: AppColors.errorColor,
+                notificationCount: notifications.length,
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.notification,
+                  );
+                },
+              )
+            : SizedBox.shrink(),
         if (actions != null) ...actions!,
         SizedBox(width: 15),
       ],

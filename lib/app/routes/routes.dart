@@ -6,6 +6,7 @@ class AppRoutes {
   static const String homeNavScreen = '/homeNavScreen';
   static const String notification = '/notification';
   static const String houseBoatScreen = '/houseBoatScreen';
+  static const String guestDetails = '/guestDetails';
   static const String homeScreen = '/homeScreen';
   static const String search = '/search';
   static const String bookingHome = '/bookingHome';

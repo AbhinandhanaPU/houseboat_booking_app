@@ -10,6 +10,16 @@ class AppTheme {
       backgroundColor: AppColors.backgroundSecondary,
       foregroundColor: AppColors.whiteColor,
     ),
+    filledButtonTheme: FilledButtonThemeData(
+      style: ButtonStyle(
+        fixedSize: WidgetStatePropertyAll(Size(110, 50)),
+        shape: WidgetStatePropertyAll(
+          ContinuousRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      ),
+    ),
     textTheme: TextTheme(
       bodyMedium: TextStyle(color: AppColors.whiteColor),
     ),

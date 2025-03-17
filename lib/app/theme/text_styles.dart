@@ -9,6 +9,11 @@ class AppTextStyles {
     color: AppColors.textPrimary,
   );
 
+  static const TextStyle title = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textPrimary,
+  );
   static const TextStyle subtitle = TextStyle(
     fontSize: 14,
     color: AppColors.textSecondary,
