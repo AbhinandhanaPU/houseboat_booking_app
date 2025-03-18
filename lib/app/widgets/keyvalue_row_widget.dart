@@ -23,7 +23,7 @@ class KeyValueRow extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-            flex: 3,
+            flex: 4,
             child: Text(
               keyText,
               style: TextStyle(
@@ -34,7 +34,7 @@ class KeyValueRow extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 4,
+            flex: 6,
             child: Text(
               ':  $valueText',
               style: TextStyle(

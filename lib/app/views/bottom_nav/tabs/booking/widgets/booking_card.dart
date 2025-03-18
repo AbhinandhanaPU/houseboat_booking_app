@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/widgets/booking_status_badge.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/widgets/check_inout_widget.dart';
+import 'package:houseboat_booking/app/widgets/custom_container.dart';
 import 'package:houseboat_booking/app/widgets/keyvalue_row_widget.dart';
 
 class BookingCard extends StatelessWidget {
@@ -34,17 +35,7 @@ class BookingCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onCardTap,
-      child: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-        decoration: BoxDecoration(
-          color: AppColors.backgroundSecondary,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: AppColors.lightGrey,
-            width: 0.5,
-          ),
-        ),
+      child: CustomContainer(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -103,6 +94,7 @@ class BookingCard extends StatelessWidget {
                 return KeyValueRow(
                   keyText: keyText,
                   valueText: valueText,
+                  textSize: 16,
                 );
               },
             ),

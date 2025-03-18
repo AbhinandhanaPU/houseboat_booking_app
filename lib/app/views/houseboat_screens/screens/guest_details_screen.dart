@@ -1,12 +1,14 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/theme/text_styles.dart';
 import 'package:houseboat_booking/app/utils/picker_utils.dart';
 import 'package:houseboat_booking/app/utils/validations.dart';
 import 'package:houseboat_booking/app/widgets/appbar_custom.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
+import 'package:houseboat_booking/app/widgets/custom_container.dart';
 import 'package:houseboat_booking/app/widgets/custom_textfield_with_label.dart';
 import 'package:houseboat_booking/app/widgets/id_proof_picker.dart';
 import 'package:houseboat_booking/app/widgets/phone_no_field.dart';
@@ -86,16 +88,8 @@ class GuestDetailsScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Container(
+              CustomContainer(
                 padding: EdgeInsets.only(left: 15, top: 15),
-                decoration: BoxDecoration(
-                  color: AppColors.backgroundSecondary,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(
-                    color: AppColors.lightGrey,
-                    width: 0.3,
-                  ),
-                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -125,7 +119,9 @@ class GuestDetailsScreen extends StatelessWidget {
             text: 'Continue',
             height: 50,
             width: double.infinity,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.priceConfirmationScreen);
+            },
           ),
         )
       ],

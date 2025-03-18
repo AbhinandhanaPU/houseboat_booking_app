@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/theme/text_styles.dart';
 import 'package:houseboat_booking/app/widgets/keyvalue_row_widget.dart';
 import 'package:houseboat_booking/app/widgets/text_button.dart';
@@ -43,7 +44,11 @@ class BookingDetailsSection extends StatelessWidget {
                   if (subtitle != null) // Show subtitle only if provided
                     Text(
                       subtitle!,
-                      style: AppTextStyles.subtitle,
+                      style: TextStyle(
+                        color: AppColors.lightPrimary,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                 ],
               ),

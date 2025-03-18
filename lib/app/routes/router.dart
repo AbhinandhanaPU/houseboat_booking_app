@@ -13,6 +13,7 @@ import 'package:houseboat_booking/app/views/bottom_nav/tabs/search/search_screen
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/wishlist/wishlist_screen.dart';
 import 'package:houseboat_booking/app/views/houseboat_screens/screens/guest_details_screen.dart';
 import 'package:houseboat_booking/app/views/houseboat_screens/screens/houseboat_screen.dart';
+import 'package:houseboat_booking/app/views/houseboat_screens/screens/price_confirmation_screen.dart';
 import 'package:houseboat_booking/app/views/notifications/notifications.dart';
 
 enum FormActionType { edit, create, draft }
@@ -77,6 +78,10 @@ class AppRouter {
       case AppRoutes.guestDetails:
         return MaterialPageRoute<GuestDetailsScreen>(
           builder: (_) => const GuestDetailsScreen(),
+        );
+      case AppRoutes.priceConfirmationScreen:
+        return MaterialPageRoute<PriceConfirmationScreen>(
+          builder: (_) => const PriceConfirmationScreen(),
         );
       default:
         return noRoute(settings);
