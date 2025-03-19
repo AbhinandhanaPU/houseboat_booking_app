@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/utils/picker_utils.dart';
 import 'package:houseboat_booking/app/widgets/appbar_custom.dart';
@@ -65,7 +66,12 @@ class _SearchScreenState extends State<SearchScreen> {
               text: 'SEARCH',
               height: 50,
               width: double.infinity,
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.searchListScreen,
+                );
+              },
             ),
           ],
         ),

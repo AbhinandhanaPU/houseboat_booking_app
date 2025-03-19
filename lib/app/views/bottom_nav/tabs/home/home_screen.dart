@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 255,
+                  height: 265,
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                     itemCount: products.length,
@@ -55,6 +55,7 @@ class HomeScreen extends StatelessWidget {
                     itemBuilder: (context, productIndex) {
                       final product = products[productIndex];
                       return ProductCard(
+                        isSmallImage: true,
                         productImage: product['productImage'],
                         productName: product['productName'],
                         productPlace: product['productPlace'],

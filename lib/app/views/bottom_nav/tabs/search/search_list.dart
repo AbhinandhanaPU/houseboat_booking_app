@@ -4,28 +4,17 @@ import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/widgets/appbar_custom.dart';
 import 'package:houseboat_booking/app/widgets/product_card.dart';
 
-class WishlistScreen extends StatelessWidget {
-  const WishlistScreen({super.key});
+class SearchListScreen extends StatelessWidget {
+  const SearchListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        showBackButton: false,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.chat_outlined),
-          ),
-        ],
+        showNotification: false,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(
-          left: 20,
-          right: 20,
-          top: 25,
-          bottom: 5,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
         child: ListView.separated(
           itemCount: wishListBoats.length,
           separatorBuilder: (context, index) => SizedBox(height: 15),
@@ -39,7 +28,7 @@ class WishlistScreen extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(context, AppRoutes.houseBoatScreen);
               },
-              isFavorite: true,
+              isFavorite: false,
               onFavoriteToggle: () {},
             );
           },

@@ -9,6 +9,7 @@ import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/screens/book
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/screens/bookings/booking_details.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/home/home_screen.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/profile/profile_screen.dart';
+import 'package:houseboat_booking/app/views/bottom_nav/tabs/search/search_list.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/search/search_screen.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/wishlist/wishlist_screen.dart';
 import 'package:houseboat_booking/app/views/houseboat_screens/screens/guest_details_screen.dart';
@@ -82,6 +83,10 @@ class AppRouter {
       case AppRoutes.priceConfirmationScreen:
         return MaterialPageRoute<PriceConfirmationScreen>(
           builder: (_) => const PriceConfirmationScreen(),
+        );
+      case AppRoutes.searchListScreen:
+        return MaterialPageRoute<SearchListScreen>(
+          builder: (_) => const SearchListScreen(),
         );
       default:
         return noRoute(settings);
