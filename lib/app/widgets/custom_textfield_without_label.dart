@@ -46,6 +46,7 @@ class CustomTextfieldWithoutLabel extends StatelessWidget {
         suffixIcon: suffixIcon,
         helperText: helperText,
         helperStyle: AppTextStyles.subtitle,
+        helperMaxLines: 2,
       ),
     );
   }

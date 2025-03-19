@@ -11,7 +11,7 @@ class AppTextStyles {
 
   static const TextStyle title = TextStyle(
     fontSize: 18,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.bold,
     color: AppColors.textPrimary,
   );
   static const TextStyle subtitle = TextStyle(
@@ -21,6 +21,11 @@ class AppTextStyles {
 
   static const TextStyle body = TextStyle(
     fontSize: 15,
+    color: AppColors.textPrimary,
+  );
+  static const TextStyle boldBody = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
     color: AppColors.textPrimary,
   );
 

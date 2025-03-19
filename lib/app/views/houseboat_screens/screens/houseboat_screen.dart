@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/views/houseboat_screens/widget/icon_text_container.dart';
-import 'package:houseboat_booking/app/views/houseboat_screens/widget/package_details_card.dart';
+import 'package:houseboat_booking/app/views/houseboat_screens/widget/package_card.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
 import 'package:houseboat_booking/app/widgets/custom_divider.dart';
 import 'package:houseboat_booking/app/widgets/icon_text_widget.dart';
@@ -54,7 +54,7 @@ class HouseBoatScreen extends StatelessWidget {
             onTap: () {
               Navigator.pushNamed(
                 context,
-                AppRoutes.guestDetails,
+                AppRoutes.packageDetails,
               );
             },
           ),
@@ -150,7 +150,7 @@ class HouseBoatScreen extends StatelessWidget {
                     text:
                         'A traditional houseboat with modern comforts, surreal lake views, well-appointed rooms, an exclusive spa, and fun outdoor activities. ',
                   ),
-                  PackageDetailsCard(
+                  PackageCard(
                     packageName: 'Room with Breakfast + Lunch + Dinner',
                     price: '8000',
                     additionalInfo: '+ taxes and fees / night',

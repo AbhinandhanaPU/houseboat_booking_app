@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
+import 'package:houseboat_booking/app/theme/text_styles.dart';
 
-class PackageDetailsCard extends StatelessWidget {
+class PackageCard extends StatelessWidget {
   final String packageName;
   final String price;
   final String additionalInfo;
 
-  const PackageDetailsCard({
+  const PackageCard({
     super.key,
     required this.packageName,
     required this.price,
@@ -23,8 +24,7 @@ class PackageDetailsCard extends StatelessWidget {
           children: [
             Text(
               packageName,
-              style: const TextStyle(
-                fontSize: 16,
+              style: AppTextStyles.boldBody.copyWith(
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -33,23 +33,15 @@ class PackageDetailsCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  'Price Starting',
-                  style: TextStyle(
-                    color: AppColors.whiteColor,
-                    fontSize: 16,
-                  ),
-                ),
+                const Text('Price Starting', style: AppTextStyles.boldBody),
                 Text.rich(
                   textAlign: TextAlign.left,
                   TextSpan(
                     children: [
                       TextSpan(
                         text: '₹$price\n',
-                        style: const TextStyle(
-                          fontSize: 18,
+                        style: AppTextStyles.title.copyWith(
                           color: AppColors.lightPrimary,
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       TextSpan(

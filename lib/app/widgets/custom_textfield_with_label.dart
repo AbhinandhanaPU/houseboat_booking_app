@@ -39,18 +39,10 @@ class CustomTextfieldWithLabel extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(
-              text,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
+            Text(text, style: AppTextStyles.boldBody),
             Text(
               ' *',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
+              style: AppTextStyles.boldBody.copyWith(
                 color: AppColors.errorColor,
               ),
             ),
