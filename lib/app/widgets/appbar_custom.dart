@@ -66,6 +66,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   Navigator.pushNamed(
                     context,
                     AppRoutes.bookingHome,
+                    arguments: 2,
                   );
                 },
                 icon: Icon(Icons.chat_outlined),

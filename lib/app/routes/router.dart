@@ -54,8 +54,9 @@ class AppRouter {
         );
 
       case AppRoutes.bookingHome:
+        final int initialTabIndex = settings.arguments as int? ?? 0;
         return MaterialPageRoute<BookingHomeScreen>(
-          builder: (_) => const BookingHomeScreen(),
+          builder: (_) => BookingHomeScreen(initialTabIndex: initialTabIndex),
         );
       case AppRoutes.wishList:
         return MaterialPageRoute<WishlistScreen>(

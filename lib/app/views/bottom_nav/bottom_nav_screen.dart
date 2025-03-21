@@ -17,7 +17,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
   var currentIndex = 0; // Track selected tab
 
   // List of screens corresponding to each navigation item
-  List<Widget> tabWidgets = [
+  final List<Widget> tabWidgets = [
     HomeScreen(), // Screen 1 - Home Screen
     SearchScreen(), // Screen 2 - Search Screen
     BookingHomeScreen(), // Screen 3 - Booking history Screen
@@ -35,16 +35,23 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // Body content based on the selected tab - Displays the selected screen
-      body: tabWidgets[currentIndex],
-
-      // Bottom Navigation Bar
-      bottomNavigationBar: _buildBottonNavBar(),
+    return PopScope(
+      canPop: currentIndex == 0, // Allow exiting only when on Home
+      onPopInvokedWithResult: (didPop, result) {
+        if (!didPop && currentIndex != 0) {
+          setState(() {
+            currentIndex = 0; // Navigate to Home if user presses back
+          });
+        }
+      },
+      child: Scaffold(
+        body: tabWidgets[currentIndex],
+        bottomNavigationBar: _buildBottomNavBar(),
+      ),
     );
   }
 
-  Widget _buildBottonNavBar() {
+  Widget _buildBottomNavBar() {
     return Container(
       height: 65,
       margin: const EdgeInsets.only(left: 20, right: 20, bottom: 15),
@@ -121,9 +128,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
             size: 28,
           ),
         ),
-        SizedBox(
-          height: 8,
-        ),
+        SizedBox(height: 8),
         Container(
           height: 6,
           width: 50,
