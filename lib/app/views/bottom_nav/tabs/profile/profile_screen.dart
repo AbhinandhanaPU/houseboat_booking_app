@@ -73,12 +73,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: CustomAppBar(
         showBackButton: false,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.chat_outlined),
-          ),
-        ],
+        showChat: true,
+        showNotification: true,
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 25, right: 25, top: 10),

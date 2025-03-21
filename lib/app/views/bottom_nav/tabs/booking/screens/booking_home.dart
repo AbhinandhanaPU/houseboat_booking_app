@@ -16,6 +16,8 @@ class BookingHomeScreen extends StatelessWidget {
       child: Scaffold(
         appBar: CustomAppBar(
           showBackButton: false,
+          showNotification: true,
+          title: 'Booking History',
           bottom: TabBar(
             tabs: [
               Tab(text: 'Bookings'),

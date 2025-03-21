@@ -28,12 +28,8 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       appBar: CustomAppBar(
         showBackButton: false,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.chat_outlined),
-          ),
-        ],
+        showChat: true,
+        showNotification: true,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

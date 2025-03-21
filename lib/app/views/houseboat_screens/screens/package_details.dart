@@ -16,7 +16,6 @@ class PackageDetailsScreeen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         title: 'Package Details',
-        showNotification: false,
       ),
       body: SingleChildScrollView(
         child: Padding(

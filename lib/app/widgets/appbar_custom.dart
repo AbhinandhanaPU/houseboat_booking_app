@@ -12,6 +12,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double elevation;
   final PreferredSizeWidget? bottom;
   final bool showNotification;
+  final bool showChat;
 
   const CustomAppBar({
     super.key,
@@ -21,7 +22,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.backgroundColor = AppColors.transparent,
     this.elevation = 0.0,
     this.bottom,
-    this.showNotification = true,
+    this.showNotification = false,
+    this.showChat = false,
   });
 
   @override
@@ -56,6 +58,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     AppRoutes.notification,
                   );
                 },
+              )
+            : SizedBox.shrink(),
+        showChat
+            ? IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.bookingHome,
+                  );
+                },
+                icon: Icon(Icons.chat_outlined),
               )
             : SizedBox.shrink(),
         if (actions != null) ...actions!,

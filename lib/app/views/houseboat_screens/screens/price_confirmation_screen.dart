@@ -17,7 +17,6 @@ class PriceConfirmationScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         title: 'Confirm & Pay',
-        showNotification: false,
       ),
       body: SingleChildScrollView(
         child: Padding(

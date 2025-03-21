@@ -21,7 +21,6 @@ class GuestDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        showNotification: false,
         title: 'Guest Details',
       ),
       body: SingleChildScrollView(

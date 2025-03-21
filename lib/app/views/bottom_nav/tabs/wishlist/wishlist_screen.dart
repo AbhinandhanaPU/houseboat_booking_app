@@ -12,12 +12,9 @@ class WishlistScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         showBackButton: false,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.chat_outlined),
-          ),
-        ],
+        showChat: true,
+        showNotification: true,
+        title: 'Wishlist',
       ),
       body: Padding(
         padding: const EdgeInsets.only(
