@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
-      initialRoute: AppRoutes.houseBoatScreen,
+      initialRoute: AppRoutes.welcomeScreen ,
       onGenerateRoute: AppRouter().generateRoute,
       onUnknownRoute: (settings) => noRoute(settings),
       home: WelcomeScreen(),

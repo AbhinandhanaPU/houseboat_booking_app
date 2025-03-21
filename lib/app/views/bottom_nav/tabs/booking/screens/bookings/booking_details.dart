@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/widgets/booking_details_section.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/booking/widgets/booking_status_badge.dart';
@@ -109,7 +110,9 @@ class BookingDetailsScreen extends StatelessWidget {
                 title: 'Houseboat Info',
                 subtitle: 'venice Houseboat Luxury',
                 actionText: 'View Houseboat',
-                onActionPressed: () {},
+                onActionPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.houseBoatScreen);
+                },
                 details: [
                   {'key': 'Type', 'value': 'Premium'},
                   {'key': 'Bedrooms', 'value': '3'},

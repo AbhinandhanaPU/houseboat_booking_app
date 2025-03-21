@@ -40,7 +40,9 @@ class HouseBoatScreen extends StatelessWidget {
                 color: AppColors.whiteColor,
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.bookingHome);
+            },
           ),
         ],
       ),

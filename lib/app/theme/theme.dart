@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
+import 'package:houseboat_booking/app/theme/text_styles.dart';
 
 class AppTheme {
   static ThemeData darkTheme = ThemeData(
@@ -39,17 +40,10 @@ class AppTheme {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      titleTextStyle: TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.bold,
-        color: AppColors.lightGrey,
-      ),
-      contentTextStyle: TextStyle(
-        fontSize: 14,
-        color: AppColors.lightGrey,
-      ),
-      elevation: 10,
-      shadowColor: AppColors.whiteColor,
+      titleTextStyle: AppTextStyles.title,
+      contentTextStyle: AppTextStyles.subtitle,
+      elevation: 5,
+      shadowColor: AppColors.lightGrey,
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
@@ -73,12 +67,12 @@ class AppTheme {
       ),
       errorBorder: OutlineInputBorder(
         borderSide: const BorderSide(
-          color: Colors.red,
+          color: AppColors.errorColor,
         ),
       ),
       focusedErrorBorder: OutlineInputBorder(
         borderSide: const BorderSide(
-          color: Colors.red,
+          color: AppColors.errorColor,
         ),
       ),
       hintStyle: TextStyle(

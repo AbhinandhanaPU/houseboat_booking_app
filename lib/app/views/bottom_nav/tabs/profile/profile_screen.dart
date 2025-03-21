@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/profile/profile_item_card.dart';
 import 'package:houseboat_booking/app/widgets/appbar_custom.dart';
@@ -77,7 +78,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         showNotification: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 25, right: 25, top: 10),
+        padding: const EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 5),
         child: SingleChildScrollView(
           child: Column(
             spacing: 15,
@@ -159,6 +160,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 leadingIcon: Icons.power_settings_new,
                 iconColor: AppColors.errorColor,
                 textColor: AppColors.errorColor,
+                onTap: () {
+                  showLogoutDialog(context);
+                },
               ),
             ],
           ),
@@ -166,4 +170,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+}
+
+void showLogoutDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text("Confirm Logout"),
+      content: Text("Are you sure you want to logout?"),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text("Cancel"),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, AppRoutes.logIn);
+          },
+          child: Text("Logout"),
+        ),
+      ],
+    ),
+  );
 }
