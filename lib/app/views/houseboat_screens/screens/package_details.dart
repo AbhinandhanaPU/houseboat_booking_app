@@ -1,11 +1,14 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/theme/text_styles.dart';
 import 'package:houseboat_booking/app/utils/constants.dart';
+import 'package:houseboat_booking/app/utils/picker_utils.dart';
 import 'package:houseboat_booking/app/widgets/appbar_custom.dart';
 import 'package:houseboat_booking/app/widgets/colored_button.dart';
-import 'package:houseboat_booking/app/widgets/counter_field.dart';
+import 'package:houseboat_booking/app/widgets/counter_with_divider.dart';
 import 'package:houseboat_booking/app/widgets/custom_textfield_without_label.dart';
 
 class PackageDetailsScreeen extends StatelessWidget {
@@ -39,88 +42,126 @@ class PackageDetailsScreeen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 15, right: 15, top: 10),
-                      child: Column(
-                        spacing: 10,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Adults (12+ years old)',
-                            style: AppTextStyles.boldBody,
+                    Theme(
+                      data: ThemeData(
+                        colorScheme: ColorScheme.dark(),
+                        inputDecorationTheme: InputDecorationTheme(
+                          hintStyle: AppTextStyles.body,
+                          contentPadding: EdgeInsets.only(left: 25),
+                          prefixIconColor: AppColors.lightGrey,
+                          suffixIconColor: AppColors.lightGrey,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(40),
+                            borderSide: const BorderSide(
+                              color: AppColors.lightGrey,
+                              width: 0.5,
+                            ),
                           ),
-                          TextFormField(
-                            decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(40),
+                            borderSide: const BorderSide(
+                              color: AppColors.lightGrey,
+                              width: 0.5,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(40),
+                            borderSide: const BorderSide(
+                              color: AppColors.lightGrey,
+                              width: 0.5,
+                            ),
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 15, right: 15, top: 10),
+                        child: Column(
+                          spacing: 5,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Adults (12+ years old)',
+                              style: AppTextStyles.boldBody,
+                            ),
+                            TextFormField(
+                              readOnly: true,
+                              decoration: InputDecoration(
+                                hintText: '2',
+                                suffixIcon: CounterFieldWithDivider(
+                                  onIncrement: () {},
+                                  onDecrement: () {},
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              'Child (5 - 12 Year old)',
+                              style: AppTextStyles.boldBody,
+                            ),
+                            TextFormField(
+                              readOnly: true,
+                              decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(40),
                                 ),
-                                hintText: '2',
+                                hintText: '0',
                                 hintStyle: AppTextStyles.body,
-                                suffixIcon: CounterField(
-                                  countValue: 2,
+                                suffixIcon: CounterFieldWithDivider(
                                   onIncrement: () {},
                                   onDecrement: () {},
-                                )),
-                          ),
-                          Text(
-                            'Child (5 - 12 Year old)Check-In Date',
-                            style: AppTextStyles.boldBody,
-                          ),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(40),
-                              ),
-                              hintText: '0',
-                              hintStyle: AppTextStyles.body,
-                              suffixIcon: CounterField(
-                                countValue: 2,
-                                onIncrement: () {},
-                                onDecrement: () {},
+                                ),
                               ),
                             ),
-                          ),
-                          Text(
-                            ' Check-In Date',
-                            style: AppTextStyles.boldBody,
-                          ),
-                          CustomTextfieldWithoutLabel(
-                            hintText: '01/02/2025',
-                            prefixIcon: Icon(Icons.calendar_month),
-                            readOnly: true,
-                            controller: TextEditingController(),
-                          ),
-                          Text(
-                            ' Check-Out Date',
-                            style: AppTextStyles.boldBody,
-                          ),
-                          CustomTextfieldWithoutLabel(
-                            hintText: '',
-                            prefixIcon: Icon(Icons.calendar_month),
-                            readOnly: true,
-                            controller: TextEditingController(),
-                          ),
-                          Text(
-                            'Select a check-out date from the calender below to view priced for that specific day',
-                            style: AppTextStyles.body.copyWith(
-                              color: AppColors.lightPrimary,
+                            SizedBox(height: 10),
+                            Text(
+                              ' Check - In Date',
+                              style: AppTextStyles.boldBody,
                             ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            spacing: 10,
-                            children: [
-                              _buildColorTextContainer(
-                                text: 'Available Dates',
-                                color: AppColors.successColor,
+                            CustomTextfieldWithoutLabel(
+                              hintText: '01/02/2025',
+                              prefixIcon: Icon(Icons.calendar_month),
+                              readOnly: true,
+                              controller: TextEditingController(),
+                              onTap: () async {
+                                final checkInDate =
+                                    await PickerUtils.pickDate(context);
+                                log(checkInDate.toString());
+                              },
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              ' Check - Out Date',
+                              style: AppTextStyles.boldBody,
+                            ),
+                            CustomTextfieldWithoutLabel(
+                              hintText: '',
+                              prefixIcon: Icon(Icons.calendar_month),
+                              readOnly: true,
+                              controller: TextEditingController(),
+                            ),
+                            Text(
+                              'Select a check-out date from the calender below to view priced for that specific day',
+                              style: AppTextStyles.body.copyWith(
+                                color: AppColors.lightPrimary,
                               ),
-                              _buildColorTextContainer(
-                                text: 'Selected Dates',
-                                color: AppColors.darkPrimary,
-                              ),
-                            ],
-                          ),
-                        ],
+                            ),
+                            SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              spacing: 10,
+                              children: [
+                                _buildColorTextContainer(
+                                  text: 'Available Dates',
+                                  color: AppColors.successColor,
+                                ),
+                                _buildColorTextContainer(
+                                  text: 'Selected Dates',
+                                  color: AppColors.darkPrimary,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(

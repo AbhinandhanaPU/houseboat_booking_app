@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
 
-class CounterFieldWithValue extends StatelessWidget {
-  final int countValue;
+class CounterFieldWithDivider extends StatelessWidget {
   final VoidCallback onIncrement;
   final VoidCallback onDecrement;
 
-  const CounterFieldWithValue({
+  const CounterFieldWithDivider({
     super.key,
-    required this.countValue,
     required this.onIncrement,
     required this.onDecrement,
   });
@@ -16,36 +14,36 @@ class CounterFieldWithValue extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
-      height: 55,
+      width: 120,
+      height: 45,
       decoration: BoxDecoration(
-        border: Border.all(color: AppColors.lightGrey),
-        borderRadius: BorderRadius.circular(5),
-        color: AppColors.backgroundSecondary,
+        border: Border.all(color: AppColors.lightGrey, width: 0.5),
+        borderRadius: BorderRadius.circular(40),
+        color: AppColors.backgroundPrimary,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
             onPressed: onDecrement,
             icon: const Icon(
               Icons.remove,
               size: 25,
+              color: AppColors.lightGrey,
             ),
           ),
-          Text(
-            countValue.toString(),
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: AppColors.whiteColor,
-            ),
+          VerticalDivider(
+            color: AppColors.lightGrey,
+            endIndent: 12,
+            indent: 12,
+            width: 2,
           ),
           IconButton(
             onPressed: onIncrement,
             icon: const Icon(
               Icons.add,
               size: 25,
+              color: AppColors.lightGrey,
             ),
           ),
         ],

@@ -98,7 +98,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      CounterField(
+                      CounterFieldWithValue(
                         countValue: adultsCount,
                         onIncrement: () {
                           setStateDialog(() {
@@ -126,7 +126,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      CounterField(
+                      CounterFieldWithValue(
                         countValue: childCount,
                         onIncrement: () {
                           setStateDialog(() {

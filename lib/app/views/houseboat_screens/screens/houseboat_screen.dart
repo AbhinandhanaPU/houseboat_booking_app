@@ -111,6 +111,14 @@ class HouseBoatScreen extends StatelessWidget {
                         IconButton(
                           onPressed: () {},
                           icon: const Icon(
+                            Icons.share_outlined,
+                            size: 28,
+                            color: AppColors.lightPrimary,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
                             Icons.favorite_border,
                             size: 28,
                             color: AppColors.lightPrimary,
