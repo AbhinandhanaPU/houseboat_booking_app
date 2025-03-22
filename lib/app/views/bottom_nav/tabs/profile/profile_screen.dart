@@ -1,73 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:houseboat_booking/app/data/profile_items.dart';
 import 'package:houseboat_booking/app/routes/routes.dart';
 import 'package:houseboat_booking/app/theme/colors.dart';
 import 'package:houseboat_booking/app/views/bottom_nav/tabs/profile/profile_item_card.dart';
 import 'package:houseboat_booking/app/widgets/appbar_custom.dart';
 
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
-
-  @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
-}
-
-class _ProfileScreenState extends State<ProfileScreen> {
-  final List<Map<String, dynamic>> profileItems = [
-    {
-      "title": "Personal Info",
-      "leading": Icons.person,
-      "trailing": Icons.arrow_forward_ios,
-      "destination": '/personalInfo',
-    },
-    {
-      "title": "Payment Settings",
-      "leading": 'assets/icons/credit_card_gear.svg',
-      "trailing": Icons.arrow_forward_ios,
-      "destination": '/paymentSettings',
-    },
-    {
-      "title": "Booking & Cancellation Policies",
-      "leading": 'assets/icons/lab_profile.svg',
-      "trailing": Icons.arrow_forward_ios,
-      "destination": '/bookingPolicies',
-    },
-    {
-      "title": "Security & Account Settings",
-      "leading": 'assets/icons/lab_profile.svg',
-      "trailing": Icons.arrow_forward_ios,
-      "destination": '/securitySettings',
-    },
-    {
-      "title": "Notifications",
-      "leading": Icons.notifications_active_outlined,
-      "trailing": Icons.arrow_forward_ios,
-      "destination": '/notifications',
-    },
-    {
-      "title": "Support & Policies",
-      "leading": Icons.live_help_outlined,
-      "trailing": Icons.arrow_forward_ios,
-      "destination": '/supportPolicies',
-    },
-    {
-      "title": "How to Book",
-      "leading": Icons.event_available_outlined,
-      "trailing": Icons.arrow_forward_ios,
-      "destination": '/howToBook',
-    },
-    {
-      "title": "Invite a Friend",
-      "leading": Icons.share,
-      "trailing": Icons.arrow_forward_ios,
-      "destination": '/inviteFriend',
-    },
-    {
-      "title": "App Info",
-      "leading": Icons.info_outline,
-      "trailing": Icons.arrow_forward_ios,
-      "destination": '/appInfo',
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
